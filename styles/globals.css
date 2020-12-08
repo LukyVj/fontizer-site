@@ -1,16 +1,93 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
-a {
-  color: inherit;
-  text-decoration: none;
+:root {
+  --base-font-size: 16px;
+  --base-font-weight: 300;
 }
 
 * {
   box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  padding: 0;
+}
+body {
+  font-family: "PT Sans", sans-serif;
+  font-size: var(--base-font-size);
+  font-weight: var(--base-font-weight);
+}
+
+p {
+  padding: 0.5em;
+}
+
+section {
+  max-width: 800px;
+  width: 100%;
+  margin: auto;
+  padding: 1em;
+}
+
+article {
+  margin: 2em;
+}
+
+pre {
+  white-space: pre-wrap;
+  text-align: left;
+  max-width: 100%;
+  margin: auto;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.6);
+}
+
+table {
+  border-collapse: collapse;
+}
+table th,
+table tr {
+  border: 1px solid;
+  text-align: left;
+}
+
+table p {
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+}
+
+/*Logo*/
+.logo {
+  margin-left: -120px;
+}
+.logo span {
+  display: inline-block;
+}
+.logo span:nth-child(1) {
+  transform: scale(1.1) translateX(calc(1.1 * 25px));
+}
+.logo span:nth-child(2) {
+  transform: scale(1.2) translateX(calc(1.2 * 25px));
+}
+.logo span:nth-child(3) {
+  transform: scale(1.3) translateX(calc(1.3 * 25px));
+}
+.logo span:nth-child(4) {
+  transform: scale(1.4) translateX(calc(1.4 * 25px));
+}
+.logo span:nth-child(5) {
+  transform: scale(1.5) translateX(calc(1.5 * 25px));
+}
+.logo span:nth-child(6) {
+  transform: scale(1.6) translateX(calc(1.6 * 25px));
+}
+.logo span:nth-child(7) {
+  transform: scale(1.8) translateX(calc(1.8 * 25px));
+}
+.logo span:nth-child(8) {
+  transform: scale(2) translateX(calc(2 * 25px));
 }
