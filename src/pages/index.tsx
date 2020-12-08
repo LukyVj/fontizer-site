@@ -2,6 +2,24 @@ import { useEffect, useState } from "react";
 import { Fontizer } from "fontizer";
 import Button from "../components/Button";
 
+const Icon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="fontizer-icon va-middle"
+    >
+      <path d="M4 7V4h16v3M9 20h6M12 4v16" />
+    </svg>
+  );
+};
+
 const App = () => {
   const [fontParam, setFontParam] = useState<any>([]);
 
@@ -26,20 +44,24 @@ const App = () => {
   return (
     <div>
       <header className="w-100p pt-48 mb-48 m-0 ta-center">
-        <h1 className="mt-0 logo d-flex ai-center jc-center">
-          <span>F</span>
-          <span>o</span>
-          <span>n</span>
-          <span>t</span>
-          <span>i</span>
-          <span>z</span>
-          <span>e</span>
-          <span>r</span>
-        </h1>
+        <div>
+          <h1 className="mt-0 logo d-flex ai-center jc-center">
+            <span>F</span>
+            <span>o</span>
+            <span>n</span>
+            <span>t</span>
+            <span>i</span>
+            <span>z</span>
+            <span>e</span>
+            <span>r</span>
+          </h1>
+        </div>
         <h2>Tiny React component to you manage your website's fonts display</h2>
-
-        <Button label="On Github" />
-        <Button label="On NPM" />
+        <Button
+          label="On Github"
+          href="https://github.com/lukyvj/fontizer-site"
+        />{" "}
+        <Button label="On NPM" href="https://www.npmjs.com/package/fontizer" />
       </header>
 
       <section>
@@ -48,7 +70,9 @@ const App = () => {
             <h3 className="m-0">Demo</h3>
           </header>
 
-          <p>Click one of the button on the corners</p>
+          <p>
+            Click one of the <Icon /> button on the corners
+          </p>
         </article>
       </section>
 
@@ -60,7 +84,7 @@ const App = () => {
 
           <p>Install the package</p>
 
-          <pre>
+          <pre className="color-theme">
             <code>yarn add fontizer</code>
           </pre>
 
@@ -68,7 +92,7 @@ const App = () => {
             Prepare your CSS file, by adding these base values to your CSS{" "}
             <code>:root{}</code> element
           </p>
-          <pre>
+          <pre className="color-theme">
             <code>
               --base-font-size: {fontParam[0]}px;
               <br />
@@ -83,7 +107,7 @@ const App = () => {
             <code>[16, 300]</code>
           </p>
 
-          <pre>
+          <pre className="color-theme">
             <code>
               {`import { Fontizer } from "fontizer";
 
@@ -97,7 +121,7 @@ const App = () => {
       </section>
       <section>
         <article>
-          <header>
+          <header className="mb-24">
             <h3 className="m-0">Props table</h3>
           </header>
 
@@ -147,7 +171,7 @@ const App = () => {
           </header>
           <p>override the styles</p>
 
-          <pre>
+          <pre className="color-theme">
             <code>
               {`.fontizer-wrapper {}
 .fontizer-button {}
@@ -160,9 +184,39 @@ const App = () => {
 
       <footer className="pv-24 ta-center">
         <p>
-          Built by <a href="https://twitter.com/lukyvj">@LukyVj</a> code hosted
-          on <a href="https://github.com/lukyvj/fontizer-site">Github</a> and
-          available on <a href="https://www.npmjs.com/package/fontizer">NPM</a>
+          Built by{" "}
+          <a
+            href="https://twitter.com/lukyvj"
+            className="fw-bold color-current"
+          >
+            @LukyVj
+          </a>{" "}
+          code hosted on{" "}
+          <a
+            href="https://github.com/lukyvj/fontizer-site"
+            className="fw-bold color-current"
+          >
+            Github
+          </a>{" "}
+          and available on{" "}
+          <a
+            href="https://www.npmjs.com/package/fontizer"
+            className="fw-bold color-current"
+          >
+            NPM
+          </a>
+        </p>
+        <p>
+          <Icon /> from{" "}
+          <a href="https://feathericons.com/" className="fw-bold color-current">
+            Feather Icons
+          </a>
+        </p>
+        <p>
+          Hosted on{" "}
+          <a href="https://vercel.com" className="fw-bold color-current">
+            Vercel
+          </a>
         </p>
       </footer>
       {["bl", "br", "tl", "tr"].map((pos) => (
