@@ -1,7 +1,6 @@
-// import Head from "next/head";
-
 import { useEffect, useState } from "react";
 import { Fontizer } from "fontizer";
+import Button from "../components/Button";
 
 const App = () => {
   const [fontParam, setFontParam] = useState<any>([]);
@@ -25,8 +24,8 @@ const App = () => {
     }
   }, []);
   return (
-    <div className="bgc-theme color-themeDark">
-      <header className="w-100p pt-48 m-0 ta-center">
+    <div>
+      <header className="w-100p pt-48 mb-48 m-0 ta-center">
         <h1 className="mt-0 logo d-flex ai-center jc-center">
           <span>F</span>
           <span>o</span>
@@ -38,20 +37,25 @@ const App = () => {
           <span>r</span>
         </h1>
         <h2>Tiny React component to you manage your website's fonts display</h2>
+
+        <Button label="On Github" />
+        <Button label="On NPM" />
       </header>
+
       <section>
         <article>
           <header>
-            <h3>Demo</h3>
+            <h3 className="m-0">Demo</h3>
           </header>
 
           <p>Click one of the button on the corners</p>
         </article>
       </section>
+
       <section>
         <article>
           <header>
-            <h3>How to use it</h3>
+            <h3 className="m-0">How to use it</h3>
           </header>
 
           <p>Install the package</p>
@@ -90,10 +94,11 @@ const App = () => {
             </code>
           </pre>
         </article>
-
+      </section>
+      <section>
         <article>
           <header>
-            <h3>Props table</h3>
+            <h3 className="m-0">Props table</h3>
           </header>
 
           <table cellPadding={8}>
@@ -114,7 +119,7 @@ const App = () => {
                 "bl",
                 "corner coordinates to position your Fontizer button/panel",
               ].map((value) => (
-                <th>
+                <th data-prop="position">
                   <p>{value}</p>
                 </th>
               ))}
@@ -127,14 +132,15 @@ const App = () => {
                 "null",
                 "Pass a function using the callback returned value, happen on each updates",
               ].map((value) => (
-                <th>
+                <th data-prop="callback">
                   <p>{value}</p>
                 </th>
               ))}
             </tr>
           </table>
         </article>
-
+      </section>
+      <section>
         <article>
           <header>
             <h3>A sprinkle of CSS?</h3>
@@ -151,6 +157,14 @@ const App = () => {
           </pre>
         </article>
       </section>
+
+      <footer className="pv-24 ta-center">
+        <p>
+          Built by <a href="https://twitter.com/lukyvj">@LukyVj</a> code hosted
+          on <a href="https://github.com/lukyvj/fontizer-site">Github</a> and
+          available on <a href="https://www.npmjs.com/package/fontizer">NPM</a>
+        </p>
+      </footer>
       {["bl", "br", "tl", "tr"].map((pos) => (
         <Fontizer
           key={pos}

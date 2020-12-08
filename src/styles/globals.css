@@ -18,6 +18,8 @@ body {
   font-family: "PT Sans", sans-serif;
   font-size: var(--base-font-size);
   font-weight: var(--base-font-weight);
+  background-color: var(--theme);
+  color: var(--themeDark);
 }
 
 p {
@@ -28,11 +30,11 @@ section {
   max-width: 800px;
   width: 100%;
   margin: auto;
-  padding: 1em;
+  margin-bottom: 1em;
 }
 
 article {
-  margin: 2em;
+  padding: 1em;
 }
 
 pre {
@@ -58,6 +60,37 @@ table p {
   padding: 0;
   margin: 0;
   font-weight: normal;
+}
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: 0.5em 0 0.75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 0.35em;
+}
+
+table th,
+table td {
+  padding: 0.625em;
+  text-align: center;
+}
+
+table th {
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
 }
 
 /*Logo*/
@@ -90,4 +123,36 @@ table p {
 }
 .logo span:nth-child(8) {
   transform: scale(2) translateX(calc(2 * 25px));
+}
+
+.atvImg-shadow {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  transition: all 0.2s ease-out;
+  box-shadow: 0 8px 30px rgba(14, 21, 47, 0.6);
+}
+
+.atvImg-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  transition: all 0.2s ease-out;
+}
+
+.atvImg-shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 5px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0) 60%
+  );
 }
