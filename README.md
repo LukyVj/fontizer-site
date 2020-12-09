@@ -33,6 +33,7 @@ import { Fontizer } from "fontizer";
 <Fontizer
   position="bl"
   callback={(value) => console.log(`values changed ${value}`)}
+  variables={{ size: "--foo-bar-size", weight: "--foo-bar-weight" }}
 />;
 ```
 
