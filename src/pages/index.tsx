@@ -161,6 +161,19 @@ const App = () => {
                 </th>
               ))}
             </tr>
+            <tr>
+              {[
+                "variables",
+                "object",
+                "{size: '--foo', weight: '--bar'}",
+                "--base-font-size & --base-font-weight",
+                "If needed, you can override the default variables name.",
+              ].map((value) => (
+                <th data-prop="variables">
+                  <p>{value}</p>
+                </th>
+              ))}
+            </tr>
           </table>
         </article>
       </section>
