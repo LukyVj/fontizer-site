@@ -1,30 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Fontizer
 
-## Getting Started
+## Small react helper to let users handle your fonts display
 
-First, run the development server:
+### Demo
 
-```bash
-npm run dev
-# or
-yarn dev
+![](https://github.com/LukyVj/fontizer-site/blob/main/public/fontizer-demo.gif?raw=true)
+
+### How to use it
+
+Install the package
+
+`yarn add fontizer`
+
+Prepare your CSS file, by adding these base values to your CSS :root element
+
+```css
+--base-font-size: 16px;
+--base-font-weight: 300;
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then load Fontizer on your page, it can take 3 props:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- The `position` one that will position it ( in the corners ).
+- A `callback` function that returns the new values in an array `[16, 300]`
+- A `variables` props, which take an object with `{size: '--new-variable-name', weight: '--new-variable-name'}`
 
-## Learn More
+_Note that if you decide to go with custom variable names, you MUST provide both size & weight variables_
 
-To learn more about Next.js, take a look at the following resources:
+```javascript
+import { Fontizer } from "fontizer";
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<Fontizer
+  position="bl"
+  callback={(value) => console.log(`values changed ${value}`)}
+/>;
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Props
 
-## Deploy on Vercel
+| prop      | type     | value                            | default                               | description                                                               |
+| --------- | -------- | -------------------------------- | ------------------------------------- | ------------------------------------------------------------------------- |
+| position  | string   | 'bl' \| 'br' \| 'tl' \| 'tr'     | bl                                    | corner coordinates to position your Fontizer button/panel                 |
+| callback  | Function | any javascript function          | null                                  | Pass a function using the callback returned value, happen on each updates |
+| variables | object   | {size: '--foo', weight: '--bar'} | --base-font-size & --base-font-weight | If needed, you can override the default variables name.                   |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### A sprinkle of CSS?
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+override the styles
+
+```css
+.fontizer-wrapper {
+}
+.fontizer-button {
+}
+.fontizer-icon {
+}
+.fontizer-panel {
+}
+```
